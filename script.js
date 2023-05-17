@@ -10,6 +10,8 @@ const b8 = document.getElementById("8");
 const b9 = document.getElementById("9");
 const b0 = document.getElementById("0");
 const ac = document.getElementById("ac");
+const c = document.getElementById("c");
+const punto = document.getElementById("punto");
 const multiplicacion = document.getElementById("multiplicacion");
 const resta = document.getElementById("resta");
 const division = document.getElementById("division");
@@ -19,14 +21,29 @@ let calculo = "0";
 let resultado = [];
 
 const imprimir =() => {
+    if(calculo.length < 18 || calculo.length === undefined){
     pantalla.textContent = calculo;
-};
+}else{
+    console.log("aja pringao");
+};}
 
 ac.addEventListener("click",() => {
     calculo = "0";
     resultado = [];
     imprimir();
 });
+c.addEventListener("click",() => {
+    calculo = calculo.slice(0,-1);
+    imprimir();
+})
+punto.addEventListener("click",() => {
+    if(calculo == "0"){
+        return;
+    }else{
+        calculo = calculo + ".";
+        imprimir();
+    }
+})
 
 b1.addEventListener("click", () => {
     if(calculo === "0"){
@@ -152,32 +169,33 @@ multiplicacion.addEventListener("click", () => {
     calculo = "0";
     imprimir();
 })
-igual.addEventListener("click",() => {
+igual.addEventListener("click", () => {
     if(calculo !== "0" || calculo === undefined){
         resultado.push(calculo);
         if(resultado[1] == "+"){
-            calculo = parseInt(resultado[0]) + parseInt(resultado[2])
+            console.log("he entrado aqui")
+            calculo = parseFloat(resultado[0]) + parseFloat(resultado[2]);
             imprimir();
             resultado = [];
             resultado.push(calculo);
             calculo = "0";
         }
         if(resultado[1] == "/"){
-            calculo = parseInt(resultado[0]) / parseInt(resultado[2])
+            calculo = parseFloat(resultado[0]) / parseFloat(resultado[2])
             imprimir();
             resultado = [];
             resultado.push(calculo);
             calculo = "0";
         }
         if(resultado[1] == "*"){
-            calculo = parseInt(resultado[0]) * parseInt(resultado[2])
+            calculo = parseFloat(resultado[0]) * parseFloat(resultado[2])
             imprimir();
             resultado = [];
             resultado.push(calculo);
             calculo = "0";
         }
         if(resultado[1] == "-"){
-            calculo = parseInt(resultado[0]) - parseInt(resultado[2])
+            calculo = parseFloat(resultado[0]) - parseFloat(resultado[2])
             imprimir();
             resultado = [];
             resultado.push(calculo);
@@ -186,5 +204,6 @@ igual.addEventListener("click",() => {
     }
         
 });
+
 
 imprimir();
