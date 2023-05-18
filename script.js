@@ -23,8 +23,6 @@ let resultado = [];
 const imprimir =() => {
     if(calculo.length < 18 || calculo.length === undefined){
     pantalla.textContent = calculo;
-}else{
-    console.log("aja pringao");
 };}
 
 ac.addEventListener("click",() => {
