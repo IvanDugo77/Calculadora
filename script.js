@@ -143,28 +143,28 @@ suma.addEventListener("click", () => {
     if(calculo !== "0"){
     resultado.push(calculo);}
     resultado.push("+");
-    calculo = "0";
+    calculo = "";
     imprimir();
 })
 resta.addEventListener("click", () => {
     if(calculo !== "0"){
     resultado.push(calculo);}
     resultado.push("-");
-    calculo = "0";
+    calculo = "";
     imprimir();
 })
 division.addEventListener("click", () => {
     if(calculo !== "0"){
     resultado.push(calculo);}
     resultado.push("/");
-    calculo = "0";
+    calculo = "";
     imprimir();
 })
 multiplicacion.addEventListener("click", () => {
     if(calculo !== "0"){
     resultado.push(calculo);}
     resultado.push("*");
-    calculo = "0";
+    calculo = "";
     imprimir();
 })
 igual.addEventListener("click", () => {
